@@ -41,7 +41,7 @@ public class test extends JFrame {
 	private JPanel uniPanel=new JPanel();
 	private JTextField searchField;
 	private Font font=new Font("SansSefif",Font.BOLD,20);
-	
+	private String className;
 	public static void main(String[] args) {
 		test search=new test();
 		search.setVisible(true);
@@ -138,7 +138,7 @@ public class test extends JFrame {
 				StringTokenizer line2=new StringTokenizer(line," ");
 				SLabel[i]=new JLabel(line);
 				SLabel[i].setFont(font);
-				SButton[i]=new JButton(str+line2.nextToken());
+				SButton[i]=new JButton(line2.nextToken());
 				smallPanel[i]=new JPanel();
 				SLabel[i].setAlignmentX(Component.CENTER_ALIGNMENT);
 				SLabel[i].setMaximumSize(new Dimension(300,50));
@@ -149,14 +149,14 @@ public class test extends JFrame {
 				SPanel.add(smallPanel[i]);
 				}
 			add(SPanel);
-			
+			className=str;
 			JScrollPane scroll = new JScrollPane(SPanel,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	        scroll.setPreferredSize(new Dimension(300, 500));
 	        add(scroll);
 	       
 			}
 
-		@Override
+		//@Override
 		public void actionPerformed(ActionEvent e) {
 			String str=e.getActionCommand();
 			thirdWindow thirdW=new thirdWindow(str);
@@ -182,7 +182,7 @@ public class test extends JFrame {
 			setSize(400,700);
 			JPanel panel=new JPanel() {
 				public void paintComponent(Graphics g) {
-					ImageIcon icon = new ImageIcon(str+".jpg");
+					ImageIcon icon = new ImageIcon(className+"/"+str+".jpg");
 					img = icon.getImage();
 					g.drawImage(img,0,0,400,600,null);
 				}
