@@ -118,7 +118,7 @@ public class SignIn extends JFrame {//회원가입화면
 
 				bos.write(t4.getText()+"/");
 
-				bos.write(t5.getText()+"\r\n");
+				bos.write(t5.getText()+"/0\r\n");
 
 				bos.close();
 
