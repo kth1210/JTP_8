@@ -1,23 +1,9 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.StringTokenizer;
-
-//import test.firstListener;
-
 import javax.swing.*;
-
-/*import test.secondListener;
-import test.secondWindow;
-import test.thirdWindow;
-*/
 import java.awt.*;
 
 public class FirstLayout extends JFrame implements ActionListener{
-
-	//static JTextField searchField;
 	static JButton searchButton;
 	
 	public static void main(String[] args) {
@@ -28,6 +14,7 @@ public class FirstLayout extends JFrame implements ActionListener{
 		setSize(1000,1000);
 		setTitle("°­ÀÇ½Ç Ã£±â");
 		setLayout(new BorderLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Font of = new Font("¸¼Àº °íµñ",Font.BOLD,20);
 		

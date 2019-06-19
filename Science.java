@@ -51,9 +51,7 @@ public class Science extends JFrame implements ActionListener{
 		
 		add(Map);
 	}
-	
-	
-	@Override
+
 	public void actionPerformed(ActionEvent e) {
 		test T2 = new test();
 		String str=e.getActionCommand();
