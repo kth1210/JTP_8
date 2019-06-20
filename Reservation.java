@@ -403,7 +403,7 @@ class ReservationClass extends JButton implements ActionListener
 	            
 	         }
 	         
-	         public boolean FindRegister(InputPanel panel)
+	         public boolean FindRegister()
 	         {
 	        	 //id, 비밀번호 , 학번, 이름
 	        	 Scanner inputStream=null;
@@ -429,11 +429,11 @@ class ReservationClass extends JButton implements ActionListener
 	    			 line=inputStream.nextLine();
 	    			 StringTokenizer ptoken= new StringTokenizer(line, "/");
 	    			 Id=ptoken.nextToken();
-	    			 if(panel.id.getText().equals(Id))
+	    			 if(id.getText().equals(Id))
 	    			 {
 	    				 Id=ptoken.nextToken(); //비밀번호 넘기기
 	    				 IdNum=ptoken.nextToken(); 
-	    				 if(panel.num_id.getText().equals(IdNum)) {
+	    				 if(num_id.getText().equals(IdNum)) {
 	    					result=true;
 	    					break;
 	    					  }
@@ -532,7 +532,7 @@ class ReservationClass extends JButton implements ActionListener
 			    	   ReplaceFile replacefile;
 			    	   if(message.equals("예"))
 			    	   {
-			    		   if(FindRegister(panel)==true)
+			    		   if(FindRegister()==true)
 			    		   {// 만약 회원정보 일치하거나 앞서 중복 신청 안했으면
 			    			   
 			    			   if(FindDuplicate()==true) 
@@ -570,7 +570,7 @@ class ReservationClass extends JButton implements ActionListener
 			    		   }
 			    		   
 			    		  	              
-				           else if(FindRegister(panel)==false)
+				           else if(FindRegister()==false)
 				           {
 				               panel.setBackground(Color.red);
 				               gui= new CheckRegister("       확인되지 않은 사용자입니다.  다시 입력해 주세요.     ");
